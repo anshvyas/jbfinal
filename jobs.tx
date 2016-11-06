@@ -1,0 +1,1 @@
+update profile set money=money+10000 where money>=50000

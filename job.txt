@@ -1,0 +1,69 @@
+update profile set money=money+25000 where money>=75000     //Achievement 11 one time   //time 07/11/16 03:pm
+
+update profile set money=money+5000 where money>=20000      //Achievement 9   //one time   //time 07/11/16  :01:00 am
+
+
+
+update `profile` SET money=money+50000,flag_achieve=1 WHERE money > 150000 AND flag_achieve=0        //Achievement_1lk   recurring   //time:
+
+
+update profile set experience =experience+10 where uid in (select uid from completed_project where pid=77 and completion_time>=2016:11:08 02:00:00 and completion_time<=2016:11:09 03:00:00 )    //Achievement_TCS
+
+
+
+update profile set experience=experience+10, money=money+10000 where uid in (SELECT uid from completed_project where pid=92)  //Achievement_HUL
+
+
+
+//Achievement_surprise_money
+update profile 
+set experience=experience +35 ,
+    money=money+35000 
+    WHERE uid in(SELECT uid
+FROM completed_project
+WHERE pid IN ('52', '70')
+GROUP BY uid
+HAVING COUNT(*) = 2
+             )
+
+
+
+
+
+
+ update profile set experience=experience+35,money=money+35000
+where  uid in  (SELECT uid from completed_project 
+WHERE pid in(SELECT pid from projects where level=2)
+     GROUP by uid having count(pid)=42)                                   //Achievement_complete_level2_project           
+
+
+
+
+update profile set experience=experience+30,money=money+30000                  //Achievement_complete_level1_project
+where  uid in  (SELECT uid from completed_project 
+WHERE pid in(SELECT pid from projects where level=1)
+     GROUP by uid having count(pid)=42) 
+
+
+
+update profile set experience=experience+7 ,money=money+12000                                       //Achievement_complete_8_projects
+where uid in(SELECT uid from completed_project 
+group by uid having count(pid)>=8)      
+
+
+
+
+
+update profile set money=money+30000  ,experience=experience+15                                    
+where uid in(SELECT uid from completed_project                               //Achievement_complete_25projects //One time 08/11/16 04:00pm
+group by uid having count(pid)>=25)
+
+
+
+
+
+
+
+
+
+UPDATE profile set money=money+30000 order by experience desc ,money desc limit 1          //Achievement_1Rank   //onetime 07/11/16 05:00pm
